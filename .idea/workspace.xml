@@ -22,30 +22,22 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3da168ea-4515-4ea8-8ef3-e4a8260bf872" name="Default Changelist" comment="Call GET_SERVICES to initialise service paths (device/media/ptz..)">
-      <change afterPath="$PROJECT_DIR$/.idea/azure/azureSettings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/src/main/java/be/teletask/onvif/listeners/OnvifConfigurationsListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/src/main/java/be/teletask/onvif/models/OnvifConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/src/main/java/be/teletask/onvif/parsers/GetConfigurationsParser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/src/main/java/be/teletask/onvif/requests/GetConfigurationsRequest.java" afterDir="false" />
+    <list default="true" id="3da168ea-4515-4ea8-8ef3-e4a8260bf872" name="Default Changelist" comment="Make OnvifResponseListener mandatory for OnvifManager">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/.gradle/6.5.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/lib/.gradle/6.5.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/.gradle/6.5.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/lib/.gradle/6.5.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/.gradle/6.5.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/lib/.gradle/6.5.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/.gradle/6.5.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/lib/.gradle/6.5.1/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/.gradle/6.5.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/lib/.gradle/6.5.1/javaCompile/classAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/.gradle/6.5.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/lib/.gradle/6.5.1/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/.gradle/6.5.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/lib/.gradle/6.5.1/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/lib/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/lib/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/lib/.gradle/checksums/checksums.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/.gradle/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/lib/.gradle/checksums/md5-checksums.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/.gradle/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/lib/.gradle/checksums/sha1-checksums.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/lib/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/main/java/be/teletask/onvif/OnvifExecutor.java" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/main/java/be/teletask/onvif/OnvifExecutor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/main/java/be/teletask/onvif/OnvifManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/main/java/be/teletask/onvif/OnvifManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/main/java/be/teletask/onvif/models/OnvifType.java" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/main/java/be/teletask/onvif/models/OnvifType.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,17 +90,6 @@
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
                 <item name="build" type="c8890929:TasksNode$1" />
               </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="onvif" type="f1a62948:ProjectNode" />
-                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="onvif" type="f1a62948:ProjectNode" />
-                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
-                <item name="compileClasspath" type="62daadca:ExternalSystemViewDefaultContributor$DependencyScopeExternalSystemNode" />
-              </path>
             </expand>
             <select />
           </tree_state>
@@ -128,8 +109,11 @@
     </file-type-list>
   </component>
   <component name="JupyterTrust" id="36eabfc4-2cc2-4eda-b5b4-383fd75cc5cf" />
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectCodeStyleSettingsMigration">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="ProjectId" id="1fc2JFiq2k1vZFvqDdeyGviPwzJ" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -139,27 +123,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="add_unversioned_files" value="$PROJECT_DIR$/lib/build/delombok/main/be/teletask/onvif/parsers/GetStatusParser.java" />
-    <property name="aspect.path.notification.shown" value="true" />
-    <property name="ignore_missing_gitignore" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.detected.package.tslint" value="true" />
-    <property name="node.js.path.for.package.eslint" value="project" />
-    <property name="node.js.path.for.package.tslint" value="project" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.30229884" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
-  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ruby.rails.projectView.checked&quot;: &quot;true&quot;
+  }
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/lib" />
@@ -180,7 +150,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.lib [clean]">
+  <component name="RunManager" selected="Gradle.lib [build]">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -188,32 +158,6 @@
         </value>
       </option>
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="GetConfigurationsParser" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="be.teletask.onvif.parsers.GetConfigurationsParser" />
-      <module name="onvif.main" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="be.teletask.onvif.parsers.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="GetMediaProfilesParser" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="be.teletask.onvif.parsers.GetMediaProfilesParser" />
-      <module name="onvif.main" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="be.teletask.onvif.parsers.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -260,6 +204,27 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
+    <configuration name="lib [closeAndReleaseRepository]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/lib" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="closeAndReleaseRepository" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
     <configuration name="lib [jar]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -281,13 +246,34 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
+    <configuration name="lib [uploadArchives]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/lib" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="uploadArchives" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.lib [clean]" />
         <item itemvalue="Gradle.lib [build]" />
-        <item itemvalue="Application.GetConfigurationsParser" />
-        <item itemvalue="Application.GetMediaProfilesParser" />
         <item itemvalue="Gradle.lib [jar]" />
+        <item itemvalue="Gradle.lib [clean]" />
+        <item itemvalue="Gradle.lib [uploadArchives]" />
+        <item itemvalue="Gradle.lib [closeAndReleaseRepository]" />
       </list>
     </recent_temporary>
   </component>
@@ -338,7 +324,14 @@
       <workItem from="1627098777991" duration="267000" />
       <workItem from="1641790414778" duration="4349000" />
       <workItem from="1641861780001" duration="14326000" />
-      <workItem from="1641946864229" duration="14393000" />
+      <workItem from="1641946864229" duration="18075000" />
+      <workItem from="1642035769829" duration="338000" />
+      <workItem from="1642050270640" duration="222000" />
+      <workItem from="1643243858066" duration="1319000" />
+      <workItem from="1643319954384" duration="608000" />
+      <workItem from="1652922569578" duration="612000" />
+      <workItem from="1652934971258" duration="564000" />
+      <workItem from="1653264474953" duration="3272000" />
     </task>
     <task id="LOCAL-00001" summary="Update version comments">
       <created>1596515225471</created>
@@ -431,7 +424,35 @@
       <option name="project" value="LOCAL" />
       <updated>1619608189447</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="add GET_CONFIGURATIONS">
+      <created>1641985313353</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1641985313353</updated>
+    </task>
+    <task id="LOCAL-00015" summary="add GET_CONFIGURATIONS to Readme">
+      <created>1641987650319</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1641987650319</updated>
+    </task>
+    <task id="LOCAL-00016" summary="add cleanup method in OnvifExecutor">
+      <created>1653265367476</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1653265367476</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Make OnvifResponseListener mandatory for OnvifManager">
+      <created>1653266380653</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1653266380653</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -458,7 +479,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Update version comments" />
@@ -472,6 +492,11 @@
     <MESSAGE value="add setPreset" />
     <MESSAGE value="Separate individual URI for different service" />
     <MESSAGE value="Call GET_SERVICES to initialise service paths (device/media/ptz..)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Call GET_SERVICES to initialise service paths (device/media/ptz..)" />
+    <MESSAGE value="add GET_CONFIGURATIONS" />
+    <MESSAGE value="add GET_CONFIGURATIONS to Readme" />
+    <MESSAGE value="update OnvifConfiguration toString" />
+    <MESSAGE value="add cleanup method in OnvifExecutor" />
+    <MESSAGE value="Make OnvifResponseListener mandatory for OnvifManager" />
+    <option name="LAST_COMMIT_MESSAGE" value="Make OnvifResponseListener mandatory for OnvifManager" />
   </component>
 </project>
