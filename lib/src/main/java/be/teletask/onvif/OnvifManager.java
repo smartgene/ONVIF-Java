@@ -98,10 +98,6 @@ public class OnvifManager implements OnvifResponseListener {
         executor.sendRequest(device, request);
     }
 
-    public void setOnvifResponseListener(OnvifResponseListener onvifResponseListener) {
-        this.onvifResponseListener = onvifResponseListener;
-    }
-
     /**
      * Clear up the resources.
      */

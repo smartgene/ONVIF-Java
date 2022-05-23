@@ -48,8 +48,20 @@ manager.discover(new DiscoveryListener() {
 With the ```OnvifManager``` class it is possible to send requests to an ONVIF-supported device. All requests are sent asynchronously and you can use the ```OnvifResponseListener``` for errors and custom response handling. It is possible to create your own ```OnvifDevice``` or retrieve a list from the ```discover``` method in the ```DiscoveryManager```
 
 ```java
-onvifManager = new OnvifManager();
-onvifManager.setOnvifResponseListener(this);
+OnvifManager onvifManager = new OnvifManager(new OnvifResponseListener() {
+    public void onResponse(OnvifDevice onvifDevice, OnvifResponse onvifResponse) {
+            log.debug("PTZ response: " + onvifResponse.getXml());
+            lastFailures.remove(onvifDevice.getHostName());
+    }
+    
+    public void onError(OnvifDevice onvifDevice, int errorCode, String errorMsg) {
+        if (shouldLogFailure(onvifDevice)) {
+            log.warn("PTZ response err [{}]: {} ",errorCode, errorMsg);
+            lastFailures.put(onvifDevice.getHostName(), Instant.now());
+        }
+    }
+});
+
 OnvifDevice device = new OnvifDevice("192.168.100.142", "username", "password");
 ```
 
