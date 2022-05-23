@@ -64,6 +64,10 @@ public class OnvifExecutor {
      * @param request
      */
     void sendRequest(OnvifDevice device, OnvifRequest request) {
+        if (onvifResponseListener == null) {
+            return;
+        }
+
         credentials.setUserName(device.getUsername());
         credentials.setPassword(device.getPassword());
         reqBody = RequestBody.create(OnvifXMLBuilder.getSoapHeader() + request.getXml() + OnvifXMLBuilder.getEnvelopeEnd(), reqBodyType);
@@ -73,8 +77,10 @@ public class OnvifExecutor {
     /**
      * Clears up the resources.
      */
-    void clear() {
-        onvifResponseListener = null;
+    public void cleanUp() {
+        if (onvifResponseListener != null)
+            onvifResponseListener = null;
+        client.dispatcher().cancelAll();
     }
 
     //Properties
@@ -107,12 +113,15 @@ public class OnvifExecutor {
                         if (xmlBody != null)
                             errorMessage = xmlBody.string();
 
-                        onvifResponseListener.onError(device, xmlResponse.code(), errorMessage);
+                        if (onvifResponseListener != null)
+                            onvifResponseListener.onError(device, xmlResponse.code(), errorMessage);
+
                     }
 
                     @Override
                     public void onFailure(Call call, IOException e) {
-                        onvifResponseListener.onError(device, -1, e.getMessage());
+                        if (onvifResponseListener != null)
+                            onvifResponseListener.onError(device, -1, e.getMessage());
                     }
 
                 });

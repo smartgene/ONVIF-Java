@@ -22,11 +22,8 @@ public class OnvifManager implements OnvifResponseListener {
     private OnvifResponseListener onvifResponseListener;
 
     //Constructors
-    public OnvifManager() {
-        this(null);
-    }
 
-    private OnvifManager(OnvifResponseListener onvifResponseListener) {
+    public OnvifManager(OnvifResponseListener onvifResponseListener) {
         this.onvifResponseListener = onvifResponseListener;
         executor = new OnvifExecutor(this);
     }
@@ -110,7 +107,7 @@ public class OnvifManager implements OnvifResponseListener {
      */
     public void destroy() {
         onvifResponseListener = null;
-        executor.clear();
+        executor.cleanUp();
     }
 
     @Override

@@ -103,7 +103,7 @@ public class OnvifConfiguration {
 
     @Override
     public String toString() {
-        return "OnvifConfigurations{" +
+        return "OnvifConfiguration{" +
                 "token='" + token + '\'' +
                 ", name='" + name + '\'' +
                 ", minPan='" + minPan + '\'' +
@@ -114,4 +114,5 @@ public class OnvifConfiguration {
                 ", maxZoom='" + maxZoom + '\'' +
                 '}';
     }
+
 }
