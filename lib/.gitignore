@@ -173,4 +173,11 @@ hs_err_pid*
 # keyfiles
 gradle.properties
 
+# maven
+target/
+.classpath
+.project
+.factorypath
+.settings
+
 # End of https://www.gitignore.io/api/java,android,intellij

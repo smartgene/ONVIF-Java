@@ -187,7 +187,7 @@ public class OnvifExecutor {
     }
 
     private String getUrlForRequest(OnvifDevice device, OnvifRequest request) {
-        return device.getHostName() + getPathForRequest(device, request);
+        return device.getHostNameUrl() + getPathForRequest(device, request);
     }
 
     private String getPathForRequest(OnvifDevice device, OnvifRequest request) {
@@ -200,6 +200,7 @@ public class OnvifExecutor {
             case GET_SNAPSHOT_URI:
                 return device.getPath().getMediaPath();
             case ABSOLUTE_MOVE:
+            case CONTINUOUS_MOVE:
             case GET_STATUS:
             case GOTO_HOME_POSITION:
             case GOTO_PRESET:

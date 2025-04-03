@@ -11,10 +11,10 @@ import lombok.NoArgsConstructor;
  */
 @Getter
 @NoArgsConstructor
-public class AbsoluteMoveRequest implements OnvifRequest {
+public class ContinuousMoveRequest implements OnvifRequest {
 
     //Constants
-    public static final String TAG = AbsoluteMoveRequest.class.getSimpleName();
+    public static final String TAG = ContinuousMoveRequest.class.getSimpleName();
 
     //Attributes
     private OnvifResponseListener listener;
@@ -22,14 +22,14 @@ public class AbsoluteMoveRequest implements OnvifRequest {
     private double pan = 0, tilt = 0, zoom = 0;
 
     //Constructors
-    public AbsoluteMoveRequest(OnvifMediaProfile mediaProfile, double pan, double tilt, double zoom) {
+    public ContinuousMoveRequest(OnvifMediaProfile mediaProfile, double pan, double tilt, double zoom) {
         this.mediaProfile = mediaProfile;
         this.pan = pan;
         this.tilt = tilt;
         this.zoom = zoom;
     }
 
-    public AbsoluteMoveRequest(OnvifMediaProfile mediaProfile, double pan, double tilt, double zoom, OnvifResponseListener listener) {
+    public ContinuousMoveRequest(OnvifMediaProfile mediaProfile, double pan, double tilt, double zoom, OnvifResponseListener listener) {
         this.mediaProfile = mediaProfile;
         this.pan = pan;
         this.tilt = tilt;
@@ -41,19 +41,19 @@ public class AbsoluteMoveRequest implements OnvifRequest {
 
     @Override
     public String getXml() {
-        String ret= "<AbsoluteMove xmlns=\"http://www.onvif.org/ver20/ptz/wsdl\">" +
+        String ret= "<ContinuousMove xmlns=\"http://www.onvif.org/ver20/ptz/wsdl\">" +
                 "<ProfileToken>" + mediaProfile.getToken() + "</ProfileToken>" +
-                "<Position> " +
+                "<Velocity> " +
                 "<PanTilt x=\"" + pan + "\" y=\"" + tilt + "\" xmlns=\"http://www.onvif.org/ver10/schema\" />" +
                 "<Zoom x=\"" + zoom + "\" xmlns=\"http://www.onvif.org/ver10/schema\" />" +
-                "</Position>" +
-                "</AbsoluteMove>";
+                "</Velocity>" +
+                "</ContinuousMove>";
         return ret;
     }
 
     @Override
     public OnvifType getType() {
-        return OnvifType.ABSOLUTE_MOVE;
+        return OnvifType.CONTINUOUS_MOVE;
     }
 
 }

@@ -5,33 +5,34 @@ package be.teletask.onvif.models;
 import java.util.Locale;
 
 /**
- * Created by Tomas Verhelst on 06/09/2018.
- * Copyright (c) 2018 TELETASK BVBA. All rights reserved.
+ * Created by Tomas Verhelst on 06/09/2018. Copyright (c) 2018 TELETASK BVBA.
+ * All rights reserved.
  */
 public abstract class Device implements Comparable<Device> {
 
-    //Constants
+    // Constants
     public static final String TAG = Device.class.getSimpleName();
     private static final String FORMAT_HTTP = "http://%s";
 
-    //Attributes
+    // Attributes
     private String host;
     private String username;
     private String password;
     private boolean connected;
+    private int port;
 
-    //Constructors
+    // Constructors
     public Device(String host) {
         this(host, "", "");
     }
 
     public Device(String host, String username, String password) {
-        this.host = buildUrl(host);
+        this.host = host;
         this.username = username;
         this.password = password;
     }
 
-    //Properties
+    // Properties
 
     public String getHostName() {
         return host;
@@ -71,6 +72,18 @@ public abstract class Device implements Comparable<Device> {
             return url;
 
         return String.format(Locale.getDefault(), FORMAT_HTTP, url);
+    }
+    
+    public void setPort(int port) {
+        this.port = port;
+    }
+
+    public String getHostNameUrl() {
+        if ( port > 0 ) {
+            return buildUrl(host + ":" + port);
+        } else {
+            return buildUrl(host);
+        }
     }
 
     public abstract DeviceType getType();

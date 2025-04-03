@@ -14,6 +14,7 @@ public enum OnvifType {
     GET_STATUS("http://www.onvif.org/ver20/ptz/wsdl"),
     GET_PTZ_SERVICE("http://www.onvif.org/ver20/ptz/wsdl"),
     ABSOLUTE_MOVE("http://www.onvif.org/ver20/ptz/wsdl"),
+    CONTINUOUS_MOVE("http://www.onvif.org/ver20/ptz/wsdl"),
     GOTO_HOME_POSITION("http://www.onvif.org/ver20/ptz/wsdl"),
     GOTO_PRESET("http://www.onvif.org/ver20/ptz/wsdl"),
     GET_PRESETS("http://www.onvif.org/ver20/ptz/wsdl"),

@@ -94,6 +94,16 @@ public class OnvifManager implements OnvifResponseListener {
         executor.sendRequest(device, request);
     }
 
+    public void continuousMove(OnvifDevice device, OnvifMediaProfile profile, double pan, double tilt, double zoom) {
+        OnvifRequest request = new ContinuousMoveRequest(profile, pan, tilt, zoom);
+        executor.sendRequest(device, request);
+    }
+
+    public void continuousStop(OnvifDevice device, OnvifMediaProfile profile) {
+        OnvifRequest request = new ContinuousStopRequest(profile);
+        executor.sendRequest(device, request);
+    }
+
     public void sendOnvifRequest(OnvifDevice device, OnvifRequest request) {
         executor.sendRequest(device, request);
     }

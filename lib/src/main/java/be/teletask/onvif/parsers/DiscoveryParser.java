@@ -1,5 +1,15 @@
 package be.teletask.onvif.parsers;
 
+import java.io.IOException;
+import java.io.StringReader;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.xmlpull.v1.XmlPullParser;
+import org.xmlpull.v1.XmlPullParserException;
+
 import be.teletask.onvif.DiscoveryMode;
 import be.teletask.onvif.OnvifUtils;
 import be.teletask.onvif.models.Device;
@@ -7,14 +17,6 @@ import be.teletask.onvif.models.DiscoveryType;
 import be.teletask.onvif.models.OnvifDevice;
 import be.teletask.onvif.models.UPnPDevice;
 import be.teletask.onvif.responses.OnvifResponse;
-
-import org.xmlpull.v1.XmlPullParser;
-import org.xmlpull.v1.XmlPullParserException;
-
-import java.io.IOException;
-import java.io.StringReader;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by Tomas Verhelst on 04/09/2018.
@@ -110,6 +112,14 @@ public class DiscoveryParser extends OnvifParser<List<Device>> {
             OnvifDevice device = new OnvifDevice(getHostName());
             device.addAddress(address);
             devices.add(device);
+            
+            try {
+                URL url = new URL(address);
+                int port = url.getPort();
+                device.setPort(port);
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            }
         }
 
         return devices;
